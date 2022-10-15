@@ -3,26 +3,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    public String name;
-    public List<String> pagina = new ArrayList<String>();
+    private String title;
+    private List<Author> authors = new ArrayList<>();
+    private List<Chapter> chapters = new ArrayList<>();
 
-    public Book(String nume){
-        this.name = nume;
+    public Book(String title) {
+        this.title = title;
     }
 
-    public void createNewParagraph(String Title_paragraph){
-        pagina.add(Title_paragraph);}
-
-    public void createNewImage(String link_image){
-        pagina.add(link_image);}
-
-    public void createNewTable(String table_link){ pagina.add(table_link);}
-
-    public String print(Book carte){
-        System.out.println("      " + name);
-        for (String e:pagina){
-            System.out.println(e);
-        }
-        return " ";
+    public void addAuthor(Author author){
+        this.authors.add(author);
+    }
+    public int createChapter(String chapterName){
+        Chapter newChapter = new Chapter(chapterName);
+        chapters.add(newChapter);
+        return chapters.size()-1;
+    }
+    public Chapter getChapter(int index){
+        return chapters.get(index);
     }
 }
+
+
+
+
