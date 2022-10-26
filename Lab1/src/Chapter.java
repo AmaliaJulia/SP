@@ -4,6 +4,7 @@ import java.util.List;
 public class Chapter {
     private String chapterName;
     private List<SubChapter> subChapters = new ArrayList<>();
+
     public Chapter(String chapterName) {
         this.chapterName = chapterName;
     }

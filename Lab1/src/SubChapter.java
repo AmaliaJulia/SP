@@ -3,8 +3,6 @@ import java.util.List;
 
 public class SubChapter {
     private String name;
-
-
     private List<Element> elements = new ArrayList<>();
 
     public SubChapter(String name) {
@@ -25,7 +23,6 @@ public class SubChapter {
         Table newTable = new Table(title);
         elements.add(newTable);
     }
-
 
     public void print(){
         System.out.println("Subchapter: "+name);
