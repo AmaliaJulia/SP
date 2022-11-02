@@ -1,23 +1,31 @@
-import java.util.ArrayList;
+import java.awt.*;
 import java.util.List;
 
-public class ImageProxy implements Picture{
+public class ImageProxy implements Picture, Element{
 
     private String url;
+    private Dimension dim;
+    private Image realImg;
+    public void loadImage(){
+        if(realImg == null){
+            realImg = new Image(url);
+        }
+    }
+
     public ImageProxy(String url){
         this.url = url;
     }
-
-    private List<Picture> img = new ArrayList<>();
-    public void print() {
-        for(Picture p: img){
-            p.print();
-        }
+    public String url(){
+        return url;
     }
-    public void addImg(Picture p) {}
-    public void remove(Picture p) {}
 
-    public void content(Picture content){
-        addImg(content);
+    public void print() {
+        loadImage();
+        realImg.print();
+    }
+    public void add(Element e) {}
+    public void remove(Element e) {}
+    public Element get(int index){
+        return null;
     }
 }

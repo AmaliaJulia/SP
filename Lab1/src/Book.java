@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +6,7 @@ public class Book extends Section{
     public Book(String title) {
         super(title);
     }
+
     public void addContent(Element content){
         add(content);
     }

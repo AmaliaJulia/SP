@@ -29,6 +29,4 @@ public class Section implements Element{
         return elements.get(index);
     }
 
-    public void addImg(ImageProxy img3) {
-    }
 }
