@@ -1,5 +1,5 @@
 
-public class Paragraph implements Element{
+public class Paragraph implements Element, AlignStrategy{
     private String text;
 
     public Paragraph(String text) {
@@ -17,4 +17,8 @@ public class Paragraph implements Element{
     public Element get(int index){
         return null;
     }
+
+    @Override
+    public void render(Paragraph p) {}
+    public void setAlignStrategy(){}
 }
