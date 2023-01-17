@@ -1,8 +1,10 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Section {
     private List<Author> authors = new ArrayList<>();
+    private TableOfContents tableOfContent = null;
 
     public Book(String title) {
         super(title);
@@ -10,6 +12,10 @@ public class Book extends Section {
 
     public void addContent(Element content) {
         add(content);
+    }
+
+    public void setTableOfContent(TableOfContents table) {
+        this.tableOfContent = table;
     }
 
     public void addAuthor(Author author) {
@@ -21,6 +27,12 @@ public class Book extends Section {
         for (Author author : authors) {
             author.print();
         }
+
         super.print();
+        System.out.println("-----Table of content----");
+        if (tableOfContent != null) {
+            tableOfContent.print();
+        }
+
     }
 }

@@ -1,4 +1,3 @@
-
 public class Main {
 
     public static void main(String[] args) throws Exception {
@@ -35,5 +34,11 @@ public class Main {
         BookSaveVisitor saveVisitor = new BookSaveVisitor();
         noapteBuna.accept(saveVisitor);
         saveVisitor.saveJSON();
+
+
+        TableOfContentsVisitor tableVisitor = new TableOfContentsVisitor();
+        noapteBuna.accept(tableVisitor);
+        noapteBuna.setTableOfContent(tableVisitor.getContents());
+        noapteBuna.print();
     }
 }
